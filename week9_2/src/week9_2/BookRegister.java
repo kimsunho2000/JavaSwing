@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class BookRegister {
 	static Scanner sc = new Scanner(System.in);
-	static ArrayList<Book> bookData = new ArrayList<Book> ();
+	static ArrayList<Book> bookData = new ArrayList<Book>();
 
 	static void registerBook(String publisher, String title, String author, String ISBN, String category, String page) {
 		Book newBook = new Book(publisher, title, author, ISBN, Integer.parseInt(category), Integer.parseInt(page));

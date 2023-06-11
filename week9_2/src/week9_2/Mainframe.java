@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -18,10 +19,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Mainframe extends JFrame {
-	static final int MAIN_WINDOW_WIDTH = 300;
-	static final int MAIN_WINDOW_HEIGHT = 50;
+	static final int MAIN_WINDOW_WIDTH = 400;
+	static final int MAIN_WINDOW_HEIGHT = 100;
 	Mainframe me;
-	Image background = new ImageIcon(Mainframe.class.getResource("../img/Mainframeimg.jpg")).getImage();
 
 	public Mainframe() {
 		me = this;
@@ -41,11 +41,14 @@ public class Mainframe extends JFrame {
 		b2.setText("대     출");
 		JButton b3 = new JButton();
 		b3.setText("도서  정보");
+		JButton b4 = new JButton();
+		b4.setText("반     납");
 
 		p1.add(l1);
 		p2.add(b1);
 		p2.add(b2);
 		p2.add(b3);
+		p2.add(b4);
 		b1.addActionListener(new ActionListener() {
 
 			@Override
@@ -73,12 +76,18 @@ public class Mainframe extends JFrame {
 				new BookListWindow(p.x + 2 * MAIN_WINDOW_WIDTH, p.y);
 			}
 		});
+		b4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Point p = me.getLocation();
+				new Returnwindow(p.x + 3 * MAIN_WINDOW_WIDTH, p.y);
+			}
+		});
 		panel.add(p1);
 		panel.add(p2);
 		frame.add(panel);
 		frame.setVisible(true);
-	}
-	public void paint(Graphics g) {//그리는 함수
-		g.drawImage(background, 0, 0, null);//background를 그려줌
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }

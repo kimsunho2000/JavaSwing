@@ -1,4 +1,5 @@
 package week9_2;
+
 import java.awt.Button;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -18,13 +19,14 @@ public class Registerwindow extends JFrame {
 	static final int ITEM_SIZE_HEIGHT = 50;
 	static final String FRAME_TITLE = "도서 등록";
 	static final String GUIDE_TEXT = "아래에 항목을 입력하세요.";
-	Registerwindow(int Main_x,int Main_y){
-		setSize(SIZE_OF_WIDTH,SIZE_OF_HEIGHT);
+
+	Registerwindow(int Main_x, int Main_y) {
+		setSize(SIZE_OF_WIDTH, SIZE_OF_HEIGHT);
 		setTitle(FRAME_TITLE);
-		this.setLocation(Main_x + Mainframe.MAIN_WINDOW_WIDTH,Main_y);
+		this.setLocation(Main_x + Mainframe.MAIN_WINDOW_WIDTH, Main_y);
 		JPanel panel = new JPanel();
 		JPanel[] p = new JPanel[NUMBER_OF_ITEMS];
-		for(int n = 0; n < NUMBER_OF_ITEMS; n++) {
+		for (int n = 0; n < NUMBER_OF_ITEMS; n++) {
 			p[n] = new JPanel();
 			p[n].setPreferredSize(new Dimension(SIZE_OF_WIDTH, ITEM_SIZE_HEIGHT));
 			panel.add(p[n]);
@@ -32,7 +34,7 @@ public class Registerwindow extends JFrame {
 		JLabel guide = new JLabel(GUIDE_TEXT);
 		p[0].add(guide);
 
-		JTextField t1 = new JTextField(15); 		//리팩토링 할 코드 
+		JTextField t1 = new JTextField(15); // 리팩토링 할 코드
 		JLabel l1 = new JLabel("출판사");
 		p[1].add(l1);
 		p[1].add(t1);
@@ -62,9 +64,10 @@ public class Registerwindow extends JFrame {
 		b1.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) { //call back
+			public void actionPerformed(ActionEvent e) { // call back
 				// TODO Auto-generated method stub
-				BookRegister.registerBook(t1.getText(),t2.getText(),t3.getText(),t4.getText(),t5.getText(),t6.getText());
+				BookRegister.registerBook(t1.getText(), t2.getText(), t3.getText(), t4.getText(), t5.getText(),
+						t6.getText());
 
 			}
 
@@ -72,7 +75,7 @@ public class Registerwindow extends JFrame {
 		b2.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) { //call back
+			public void actionPerformed(ActionEvent e) { // call back
 				// TODO Auto-generated method stub
 				setVisible(false);
 			}
@@ -81,12 +84,11 @@ public class Registerwindow extends JFrame {
 		p[7].add(b1);
 		p[7].add(b2);
 
-		for(int t = 0; t < NUMBER_OF_ITEMS; t++) {
+		for (int t = 0; t < NUMBER_OF_ITEMS; t++) {
 			panel.add(p[t]);
 		}
 		this.add(panel);
 		setVisible(true);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
 }

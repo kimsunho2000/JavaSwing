@@ -75,7 +75,6 @@ public class Rentwindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) { // call back
-				// TODO Auto-generated method stub
 				String bookTitle = t1.getText();
 				for (int i = 0; i < BookRegister.bookData.size(); i++) {
 					if (bookTitle.equals(BookRegister.bookData.get(i).getTitle())) {
@@ -89,11 +88,11 @@ public class Rentwindow extends JFrame {
 						int rent_yy = Integer.parseInt(yy.getText());
 						int rent_mm = Integer.parseInt(mm.getText());
 						int rent_dd = Integer.parseInt(dd.getText());
-						newData.rentday = new Date(rent_yy,rent_mm,rent_dd);
+						newData.rentday = new Date(rent_yy, rent_mm, rent_dd);
 						int return_yy = Integer.parseInt(yy2.getText());
 						int return_mm = Integer.parseInt(mm2.getText());
 						int return_dd = Integer.parseInt(dd2.getText());
-						newData.returnday = new Date(return_yy,return_mm,return_dd);
+						newData.returnday = new Date(return_yy, return_mm, return_dd);
 						BookRegister.bookData.set(i, newData);
 						break;
 					}

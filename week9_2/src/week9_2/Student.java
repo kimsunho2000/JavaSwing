@@ -49,8 +49,9 @@ public class Student {
 		System.out.println("학번:" + getId());
 
 	}
+
 	@Override
 	public String toString() {
-		return renterName + " " + phoneNumber + " " + id; 
+		return renterName + " " + phoneNumber + " " + id;
 	}
 }

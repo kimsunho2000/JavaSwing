@@ -21,7 +21,8 @@ public class Magazine extends Book {
 		this.month = month;
 	}
 
-	Magazine(String publisher, String title, String author, String ISBN,int category, int page, int serial,int month) {
+	Magazine(String publisher, String title, String author, String ISBN, int category, int page, int serial,
+			int month) {
 		super(publisher, title, author, ISBN, category, page);
 		this.serial = serial;
 		this.month = month;
