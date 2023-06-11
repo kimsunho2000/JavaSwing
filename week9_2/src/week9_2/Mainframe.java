@@ -1,19 +1,27 @@
 package week9_2;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Mainframe extends JFrame {
 	static final int MAIN_WINDOW_WIDTH = 300;
 	static final int MAIN_WINDOW_HEIGHT = 50;
 	Mainframe me;
+	Image background = new ImageIcon(Mainframe.class.getResource("../img/Mainframeimg.jpg")).getImage();
 
 	public Mainframe() {
 		me = this;
@@ -38,7 +46,6 @@ public class Mainframe extends JFrame {
 		p2.add(b1);
 		p2.add(b2);
 		p2.add(b3);
-
 		b1.addActionListener(new ActionListener() {
 
 			@Override
@@ -70,5 +77,8 @@ public class Mainframe extends JFrame {
 		panel.add(p2);
 		frame.add(panel);
 		frame.setVisible(true);
+	}
+	public void paint(Graphics g) {//그리는 함수
+		g.drawImage(background, 0, 0, null);//background를 그려줌
 	}
 }
