@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class Mainframe extends JFrame {
 	static final int MAIN_WINDOW_WIDTH = 400;
 	static final int MAIN_WINDOW_HEIGHT = 100;
-	Mainframe me;
+	static Mainframe me;
 
 	public Mainframe() {
 		me = this;
