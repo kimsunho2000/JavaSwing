@@ -21,16 +21,16 @@ public class BookListWindow extends JFrame {
 		JButton Refresh = new JButton();
 		Refresh.setText("새로고침");
 		panel.add(Refresh);
-		Refresh.addActionListener(new ActionListener() { //새로고침 기능 구현
+		Refresh.addActionListener(new ActionListener() { // 새로고침 기능 구현
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); //원래 있던 프레임을 닫기
-				Point p = Mainframe.me.getLocation(); //다시 실행
+				dispose(); // 원래 있던 프레임을 닫기
+				Point p = Mainframe.me.getLocation(); // 다시 실행
 				new BookListWindow(p.x + 2 * Mainframe.MAIN_WINDOW_WIDTH, p.y);
-				
+
 			}
-			
+
 		});
 		for (Book book : BookRegister.bookData) {
 			JLabel l2 = new JLabel();
@@ -57,7 +57,7 @@ public class BookListWindow extends JFrame {
 			p1.add(b);
 			p1.add(l2);
 			panel.add(p1);
-			
+
 		}
 		add(panel);
 		setVisible(true);

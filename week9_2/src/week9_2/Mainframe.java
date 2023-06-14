@@ -7,6 +7,7 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -22,6 +23,7 @@ public class Mainframe extends JFrame {
 	static final int MAIN_WINDOW_WIDTH = 400;
 	static final int MAIN_WINDOW_HEIGHT = 100;
 	static Mainframe me;
+	BufferedImage img = null;
 
 	public Mainframe() {
 		me = this;
@@ -34,7 +36,6 @@ public class Mainframe extends JFrame {
 		JPanel p2 = new JPanel();
 		p2.setPreferredSize(new Dimension(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT));
 		JLabel l1 = new JLabel("실행할 업무를 선택하시오.");
-
 		JButton b1 = new JButton();
 		b1.setText("도서등록");
 		JButton b2 = new JButton();
@@ -90,4 +91,5 @@ public class Mainframe extends JFrame {
 		frame.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
+
 }

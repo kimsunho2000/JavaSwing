@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 public class Rentwindow extends JFrame {
 	static final int NUMBER_OF_ITEMS = 8;
-	static final int SIZE_OF_WIDTH = 300;
+	static final int SIZE_OF_WIDTH = 350;
 	static final int SIZE_OF_HEIGHT = 500;
 	static final int ITEM_SIZE_HEIGHT = 50;
 	static final String FRAME_TITLE = "도서 대출";
@@ -34,8 +34,13 @@ public class Rentwindow extends JFrame {
 		}
 		JLabel guide = new JLabel(GUIDE_TEXT);
 		p[0].add(guide);
-
-		JTextField t1 = new JTextField(15); // 리팩토링 할 코드
+		JLabel a = new JLabel("년");
+		JLabel b = new JLabel("월");
+		JLabel c = new JLabel("일");
+		JLabel a_1 = new JLabel("년");
+		JLabel b_1 = new JLabel("월");
+		JLabel c_1 = new JLabel("일");
+		JTextField t1 = new JTextField(15);
 		JLabel l1 = new JLabel("  책 제 목  ");
 		p[1].add(l1);
 		p[1].add(t1);
@@ -58,17 +63,22 @@ public class Rentwindow extends JFrame {
 		JTextField dd = new JTextField(5);
 		p[5].add(l5);
 		p[5].add(yy);
+		p[5].add(a);
 		p[5].add(mm);
+		p[5].add(b);
 		p[5].add(dd);
+		p[5].add(c);
 		JLabel l6 = new JLabel(" 반납일 ");
 		JTextField yy2 = new JTextField(5);
 		JTextField mm2 = new JTextField(5);
 		JTextField dd2 = new JTextField(5);
 		p[6].add(l6);
 		p[6].add(yy2);
+		p[6].add(a_1);
 		p[6].add(mm2);
+		p[6].add(b_1);
 		p[6].add(dd2);
-
+		p[6].add(c_1);
 		JButton b1 = new JButton("확		인");
 		JButton b2 = new JButton("취		소");
 		b1.addActionListener(new ActionListener() {
